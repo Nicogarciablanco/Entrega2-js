@@ -101,8 +101,13 @@ Ayuda: van a tener que realizar dos recorridos,
 ya que cada pizza del array de pizzas tiene una propiedad 
 "ingredientes" cuyo valor es un array con ingredientes.*/
 
-const mostrarIngredientes = pizzas.filter(producto => {
+/* const mostrarIngredientes = pizzas.filter(producto => {
   console.log(`Nombre: ${producto.nombre}, Ingredientes: ${producto.ingredientes}`)
    
+}) */
+
+
+const mostrarIngredientes = pizzas.forEach(producto => {
+  console.log(`Nombre: ${producto.nombre} Ingredientes: ${producto.ingredientes}`) 
 })
 
