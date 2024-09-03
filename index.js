@@ -23,7 +23,7 @@ const pizzas = [
   {
     id: 4,
     nombre: "pizza 4 Quesos",
-    precio: 380,
+    precio: 480,
     ingredientes: [
       "Muzzarella",
       "Tomate",
@@ -50,40 +50,39 @@ const pizzas = [
 
 
 console.log("Ejercicio A:")
+/* Las pizzas que tengan un id impar. */
 
-const impares = pizzas.filter(producto => producto.id % 2 !== 0 )
+const impares = pizzas.filter(producto => producto.id % 2 !== 0)
 
 const mostrarImpares = impares.map(producto => {
-  if(producto.id == 1){
-    console.log( `PIZZAS IMPARES:
+  if (producto.id == 1) {
+    console.log(`PIZZAS IMPARES:
   Nombre: ${producto.nombre}
   Precio: ${producto.precio}
   Ingredientes: ${producto.ingredientes}`)
-  }else{
-    console.log( `  Nombre: ${producto.nombre}
+  } else {
+    console.log(`  Nombre: ${producto.nombre}
   Precio: ${producto.precio}
   Ingredientes: ${producto.ingredientes}`)
   }
-  
+
 })
 
 console.log("//////////////////////////////////////////////////////////////////////////////////////////////////")
 console.log("Ejercicio B:")
+/* Responder: ¿Hay alguna pizza que valga menos de $600? */
 
-const menorA600 = pizzas.filter(producto => {
-  if (producto.precio < 600 == 1){
-    console.log(` Si, esta es la pizza que vale menos de $600 
-  Nombre: ${producto.nombre}
-  Precio: ${producto.precio}
-  Ingredientes: ${producto.ingredientes}`)
-  }else if ((producto.precio < 600) > 1){
-    console.log(` Si, estas son las pizzas que valen menos de $600 
-      Nombre: ${producto.nombre}
-      Precio: ${producto.precio}
-      Ingredientes: ${producto.ingredientes}`)
+const menorA600 = pizzas.filter(producto => producto.precio < 600)
+
+  if (menorA600.length > 0){
+    console.log("Si, estas son las pizzas que valen menos de $600")
+    menorA600.forEach(menorA600 => console.log(`
+      Nombre: ${menorA600.nombre}
+      Precio: ${menorA600.precio}
+      Ingredientes: ${menorA600.ingredientes}`))  
+  }else{
+    console.log("No hay pizzas que valgan menos de $600.")
   }
-})
-
 
 console.log("//////////////////////////////////////////////////////////////////////////////////////////////////")
 console.log("Ejercicio C:")
@@ -108,6 +107,6 @@ ya que cada pizza del array de pizzas tiene una propiedad
 
 
 const mostrarIngredientes = pizzas.forEach(producto => {
-  console.log(`Nombre: ${producto.nombre} Ingredientes: ${producto.ingredientes}`) 
+  console.log(`Nombre: ${producto.nombre} Ingredientes: ${producto.ingredientes}`)
 })
 
